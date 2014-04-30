@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="UserService1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://webstrar13.fulton.asu.edu/Page5/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://webstrar13.fulton.asu.edu/Page5/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="UserService_AddUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddUser" />
+  </wsdl:message>
+  <wsdl:message name="UserService_AddUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserService_checkUserExists_InputMessage">
+    <wsdl:part name="parameters" element="tns:checkUserExists" />
+  </wsdl:message>
+  <wsdl:message name="UserService_checkUserExists_OutputMessage">
+    <wsdl:part name="parameters" element="tns:checkUserExistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserService_getNewReleaseDvds_InputMessage">
+    <wsdl:part name="parameters" element="tns:getNewReleaseDvds" />
+  </wsdl:message>
+  <wsdl:message name="UserService_getNewReleaseDvds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getNewReleaseDvdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserService_getUserRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:getUserRole" />
+  </wsdl:message>
+  <wsdl:message name="UserService_getUserRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getUserRoleResponse" />
+  </wsdl:message>
+  <wsdl:portType name="UserService">
+    <wsdl:operation name="AddUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/UserService/AddUser" message="tns:UserService_AddUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/UserService/AddUserResponse" message="tns:UserService_AddUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="checkUserExists">
+      <wsdl:input wsaw:Action="http://tempuri.org/UserService/checkUserExists" message="tns:UserService_checkUserExists_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/UserService/checkUserExistsResponse" message="tns:UserService_checkUserExists_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getNewReleaseDvds">
+      <wsdl:input wsaw:Action="http://tempuri.org/UserService/getNewReleaseDvds" message="tns:UserService_getNewReleaseDvds_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/UserService/getNewReleaseDvdsResponse" message="tns:UserService_getNewReleaseDvds_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getUserRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/UserService/getUserRole" message="tns:UserService_getUserRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/UserService/getUserRoleResponse" message="tns:UserService_getUserRole_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_UserService" type="tns:UserService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddUser">
+      <soap:operation soapAction="http://tempuri.org/UserService/AddUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkUserExists">
+      <soap:operation soapAction="http://tempuri.org/UserService/checkUserExists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNewReleaseDvds">
+      <soap:operation soapAction="http://tempuri.org/UserService/getNewReleaseDvds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserRole">
+      <soap:operation soapAction="http://tempuri.org/UserService/getUserRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UserService1">
+    <wsdl:port name="BasicHttpBinding_UserService" binding="tns:BasicHttpBinding_UserService">
+      <soap:address location="http://webstrar13.fulton.asu.edu/Page5/Service1.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
